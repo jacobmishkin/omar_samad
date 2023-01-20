@@ -1,0 +1,58 @@
+//--------------------------------------------------------------
+// Typography
+//--------------------------------------------------------------
+
+$font-sans:  "Open Sans", sans-serif;
+$font-sans-serif: "Raleway", sans-serif;
+$font-serif: Roboto, Georgia, Times, "Times New Roman", serif;
+$font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font-pre: "Courier 10 Pitch", Courier, monospace;
+
+$line-height-body: 1.625;
+$line-height-pre: $line-height-body;
+
+//Front page font sizes
+$front-page-h1: (
+		null  	: 1em,	
+		480px 	: 1.5em,
+		500px		: 1.8em,
+		600px 	:	2em,
+		640px 	: 2.3em,
+		700px 	: 2em,
+		800px		: 2.5em,
+		1024px	: 3em
+	);
+
+$breakpoints: (
+	small-small		: 400px,
+	small					: 480px,
+	medium-small	: 500px,
+	large-small 	:	600px,
+	small-medium	: 640px,
+	medium				: 700px,
+	large					: 1024px
+);
+
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+	@each $fs-breakpoint, $fs-font-size in $fs-map {
+		@if $fs-breakpoint == null {
+			font-size: $fs-font-size; 
+		}
+		@else {
+			//if there is a key that exist in 
+			//$fs-brakpoints use that value
+			@if map-has-key($fs-breakpoints, $fs-breakpoint) {
+				$fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+			}
+			@media screen and (min-width: $fs-breakpoint) {
+				font-size: $fs-font-size;
+			}
+		}
+	}
+}
+
+
+
+
+ 

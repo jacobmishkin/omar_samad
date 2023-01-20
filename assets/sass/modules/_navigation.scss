@@ -1,0 +1,103 @@
+@media screen and (min-width: 700px) {
+	.mobile-navigation{
+		display: none;
+	}
+	.main-navigation {
+		display: block;
+	}
+	.main-navigation ul {
+		position: relative;
+		opacity: 1;
+		width: inherit;
+	}
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation {
+		float: right;
+		width: 60%;
+
+		a {
+			color: $black;
+		}
+	}
+
+.main-navigation ul {
+		display: inline-block;
+		top: 0;	
+		background-color: #fff;
+		text-align: right;
+		margin-top: 2em;
+		float: right;
+			
+			li {
+				float: left;
+				margin-right: 3em;
+			}
+		.menu-item {
+			color: $black;
+			border-bottom: 2px solid transparent;
+			transition: border-bottom .5s ease;
+
+			&:hover,
+			&:focus {
+				border-bottom: 2px solid $black;
+			}
+		}
+	}
+
+}
+
+/****************************
+	Posts Nav 
+ ****************************/
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+//--------------------------------------------------------------
+// Front Page Catagories nav
+//--------------------------------------------------------------
+.menu-front-page-menu-container {
+	text-align: center;
+}
+
+.front-page-nav ul {
+		display: inline-block;
+		text-align: center;
+		margin-top: 2em;
+		
+		li {
+			float: left;
+			margin-left: 1em;
+			border-bottom: 2px solid transparent;
+			transition: border-bottom .5s ease;
+
+			&:hover,
+			&:focus {
+				border-bottom: 2px solid $black;
+			}
+			a {
+				color: $black;
+			}
+		}
+}
+
+
+
+
+

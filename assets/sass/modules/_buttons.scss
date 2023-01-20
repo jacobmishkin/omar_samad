@@ -1,0 +1,76 @@
+//--------------------------------------------------------------
+// Buttons
+//--------------------------------------------------------------
+$size: 20px;
+$ratio: 1.2;
+$desktop-size: 25px;
+$transition-time: 0.3s;
+
+.reel-button-outer{
+	width: 100%;
+
+	.reel-button {
+		display: block;
+		width: 0;
+		height: 0;
+		position: relative;
+		cursor: pointer;
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: ($size * $ratio) solid $white;
+		margin: 0 auto;
+		transition: all $transition-time;
+		left:($size * 0.2);
+		top: ($size * 0.1);
+		z-index: 11;
+		
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: ($size * -1.8);
+			bottom: ($size * -1.8);
+			left: ($size * -2.7);
+			right: ($size * -1.2);
+			border-radius: 50%;
+			border: ($size * .1) solid $white;
+			z-index: 12;
+			transition: all $transition-time;
+		}
+
+		&:hover, 
+		&:focus {
+			&:before {
+				transform: scale(1.1);
+				border: ($size * .1) solid $white;
+			}
+		}
+	}
+	@include media(700px) {
+			.reel-button {
+
+				&:before {
+					border: ($size * .1) solid darken($white, 15%);
+				}
+			}
+		}
+
+	@include media(940px) {
+		.reel-button { 
+				border-top: $desktop-size solid transparent;
+				border-bottom: $desktop-size solid transparent;
+				border-left: ($desktop-size * $ratio) solid $white;
+				left:($desktop-size * 0.2);
+				top: ($desktop-size * 0.1);
+
+				&:before {
+					top: ($desktop-size * -1.8);
+					bottom: ($desktop-size * -1.8);
+					left: ($desktop-size * -2.7);
+					right: ($desktop-size * -1.2);
+				}
+		}
+
+	}
+
+}

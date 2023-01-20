@@ -1,0 +1,162 @@
+				#mobile-menu {
+	display: none;
+}
+
+.main-navigation {
+	display: none;
+}
+
+
+.mobile-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+	text-align: center;
+	
+
+	ul {
+		overflow: hidden;
+		list-style: none;
+		opacity: 1;
+		width: 100%;
+		height: 0px;
+		padding-left: 0;
+		z-index: 0;
+		transition: .5s ease-in-out,  opacity .8s ease-in-out;
+		
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			z-index: 0;
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+		position: relative;
+		margin-top: 1.5em;
+		&:hover > a,
+		&.focus > a {
+		}
+
+		&:first-child {
+			margin-top: 1em;
+		}
+	
+	}
+
+	a {
+		display: inline-block;
+		text-decoration: none;
+		color:$mobile-nav-color;
+		padding-bottom: .2em;
+		border-bottom: 1px solid #fff;
+	}
+}
+
+/****************************
+	Burger Mobile Nav
+ ****************************/
+button {
+	border-style: none;
+}
+
+.menu-toggle {
+	line-height: .7;
+	font-size: 2em;
+
+
+	.burger-icon {
+		transition: .5s ease-in;
+		transform-origin: center;
+			
+			path {
+				stroke: $mobile-nav-color;
+			}	
+  }
+
+	.burger-icon-up {
+		transform: rotate(-90deg);
+		transition: .5s ease-out;
+		path {
+		stroke: $mobile-nav-color;
+		}
+	}
+
+	svg {
+		overflow: visible;
+		text {
+			fill: $mobile-nav-color;
+
+		}
+	
+	}
+	
+}
+
+/****************************
+	Custom Mobile Nav
+ ****************************/
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+	
+}
+
+.main-navigation.toggled ul {
+		padding: 1em 0 2em 0;
+		opacity: 1;
+		z-index: 15;
+}
+
+.menu-toggle {
+		width: 100%;
+		text-transform: uppercase;
+		background-color: $white;
+		padding: .5em 1em;
+}
+
+.toggled{
+	.menu {
+	height: 165px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	}
+}
+
+.toggled { 
+	.main-navigation {
+		height: 135px;
+		z-index: 10;
+	}
+}
+
+.toggled {
+	.menu-toggle{
+		height: 135px;
+	}
+	
+}

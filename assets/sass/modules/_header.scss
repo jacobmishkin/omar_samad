@@ -1,0 +1,56 @@
+//--------------------------------------------------------------
+// Header
+//--------------------------------------------------------------
+
+// Site Title
+.site-title {
+	font-size: 2.5em;
+	text-align: center;
+	line-height: 1.325;	
+} // .site-title
+
+// Site Description
+.site-description {
+	font-size: 1em;;
+	margin: 0 0 rem(24) 0;
+} // .site-description
+
+.site-header {
+	max-width: 1200px;
+	margin: 10px auto;
+	
+	
+	.site-branding {
+		display: block;
+		text-align: center;
+		.site-title {
+			margin-bottom: 0;
+			font-weight: 400;
+
+			a {
+			color: black;
+			}
+		}
+		.site-description {
+			margin-top: 0;
+			letter-spacing: 0.363636em;
+			line-height: 1.025;
+		}
+	}
+}
+/****************************
+	700px site title & Branding
+ ****************************/
+ .site-header { 
+ 		@include media(700px) {
+	 .site-branding {
+	 		display: inline-block;
+	 		text-align: left;
+	 		
+	 		.site-description {
+	 			text-align: center;
+	 		}
+	 	}
+	 }
+}
+
